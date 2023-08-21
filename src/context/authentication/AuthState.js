@@ -1,8 +1,10 @@
 import AuthContext from "./authContext";
+import { useNavigate } from "react-router-dom";
 
 
 const AuthState = (props) => {
-  
+
+  let navigate = useNavigate();
 
   const login = async (user) => {
     console.log(user)
@@ -16,20 +18,45 @@ const AuthState = (props) => {
       });
       const json = await response.json();
       console.log(json)
-      if(json.jwtToken){
+      if (json.jwtToken) {
         localStorage.setItem("token", json.jwtToken)
+        navigate("/");
       }
       else {
         console.log("Invalid Credentials")
       }
     } catch (error) {
-      console.error(error.message)
+      alert("Invalid Credentials")
     }
+  }
+
+  const createUser = async (user) =>{
+      const {name, email, password } = await user
+      try {
+        const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({name, email, password }),
+        });
+        const json = await response.json();
+        console.log(json)
+        if (json.jwtToken) {
+          localStorage.setItem("token", json.jwtToken)
+          navigate("/");
+        }
+        else {
+          console.log("Invalid Credentials")
+        }
+      } catch (error) {
+        alert("Invalid Credentials")
+      }
   }
 
 
   return (
-    <AuthContext.Provider value={{ login }} >
+    <AuthContext.Provider value={{ login, createUser }} >
       {props.children}
     </AuthContext.Provider>
   )

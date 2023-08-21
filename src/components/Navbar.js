@@ -35,7 +35,7 @@ const Navbar = (props) => {
                         </ul>
                         <form className="d-flex">
                         <Link  className= {`btn btn-outline-light ${props.display} me-3`} to="/login" role="button">Login</Link>
-                        <Link className="btn btn-outline-light" to="/signup" role="button">Signup</Link>
+                        <Link className="btn btn-outline-light ${props.display}" to="/signup" role="button">Signup</Link>
                         </form>
                     </div>
                 </div>

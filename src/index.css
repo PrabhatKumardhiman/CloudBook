@@ -17,9 +17,6 @@ code {
   cursor: pointer;
 }
 
-.container{ 
-  overflow: scroll;
-}
 
 ::-webkit-scrollbar{
   width: 8px;

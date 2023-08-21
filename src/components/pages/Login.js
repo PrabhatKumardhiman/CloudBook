@@ -7,7 +7,6 @@ const Login = () => {
     const { login } = useContext(authContext)
     const [ user, setUser ] = useState({ email : "", password : ""})
 
-
     const handleSubmit = (e) =>{
         e.preventDefault();
         login(user)
