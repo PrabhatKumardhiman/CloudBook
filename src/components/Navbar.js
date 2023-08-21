@@ -1,13 +1,20 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
+
+    let navigateto = useNavigate();
+    const handleLogout = () => {
+        localStorage.clear();
+        navigateto('/login')
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary" data-bs-theme="dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">
-                        Navbar
+                        CloudBook
                     </Link>
                     <button
                         className="navbar-toggler"
@@ -29,14 +36,14 @@ const Navbar = (props) => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">
-                                    Link
+                                    About
                                 </Link>
                             </li>
                         </ul>
-                        <form className="d-flex">
+                        { !localStorage.getItem('token') ? <form className="d-flex">
                         <Link  className= {`btn btn-outline-light ${props.display} me-3`} to="/login" role="button">Login</Link>
                         <Link className={`btn btn-outline-light ${props.displaysignup}`} to="/signup" role="button">Signup</Link>
-                        </form>
+                        </form> : <button className="btn btn-outline-light" onClick = {handleLogout}>Logout</button> }
                     </div>
                 </div>
             </nav>

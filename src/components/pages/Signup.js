@@ -17,11 +17,17 @@ const Signup = () => {
     return (
         <div>
         <Navbar displaysignup={"d-none"} />
-        <div className="container d-flex justify-content-around align-items-center " style = {{height: "calc(100vh - 60px)", width: "60%"}} >
+        <div className="container d-flex justify-content-around align-items-center mt-5"  >
+        <div className = "leftContainer">
         <h1> CloudBook </h1>
+        <p className = "text-center">The Best Place to store your notes online!</p>
+        </div>
+
+        <div className="" >
+                    <div className="card-body">
             <form onSubmit = {handleSubmit} >
-                <div className="mb-3">
-                    <label htmlFor="name" className="form-label" style={{fontSize:"1.5rem"}} >
+                <div className="mb-3 mt-2">
+                    <label htmlFor="name" className="form-label mt-4 " style={{fontSize:"1.5rem"}} >
                         Name
                     </label>
                     <input
@@ -88,6 +94,8 @@ const Signup = () => {
                 </button>
             </form>
 
+        </div>
+        </div>
         </div>
     </div>
     )

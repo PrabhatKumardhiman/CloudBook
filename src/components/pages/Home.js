@@ -6,7 +6,7 @@ import Alert from '../Alert';
 const Home = () => {
     return (
         <>
-            <Navbar />
+            <Navbar  />
             <div className="container">
                 <Alert alert = {alert}/>
                 <AddNote />
