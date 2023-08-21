@@ -1,11 +1,8 @@
 import AuthContext from "./authContext";
-import { useNavigate  } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 
 
 const AuthState = (props) => {
   
-  let navigate = useNavigate();
 
   const login = async (user) => {
     console.log(user)
@@ -21,7 +18,6 @@ const AuthState = (props) => {
       console.log(json)
       if(json.jwtToken){
         localStorage.setItem("token", json.jwtToken)
-        navigate("/");
       }
       else {
         console.log("Invalid Credentials")
@@ -33,11 +29,9 @@ const AuthState = (props) => {
 
 
   return (
-    <Router>
     <AuthContext.Provider value={{ login }} >
       {props.children}
     </AuthContext.Provider>
-    </Router>
   )
 }
 
