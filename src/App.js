@@ -6,11 +6,13 @@ import Signup from './components/pages/Signup';
 import {  Routes, Route } from "react-router-dom";
 import NoteState from './context/notes/NoteState';
 import AuthState from './context/authentication/AuthState';
+import AlertState from './context/alert/AlertState';
 
 function App() {
   return (
     <NoteState>
       <AuthState>
+        <AlertState>
           <div className="App">
             <Routes>
               <Route exact path="/" element={ <Home /> }></Route>
@@ -19,6 +21,7 @@ function App() {
               <Route exact path="/signup" element={ <Signup/> }></Route>
             </Routes>
           </div>
+          </AlertState>
       </AuthState>
     </NoteState>
   );

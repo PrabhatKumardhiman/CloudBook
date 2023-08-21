@@ -1,55 +1,60 @@
-import react , {useState, useContext} from 'react';
+import react, { useState, useContext } from 'react';
 import Navbar from '../Navbar';
 import authContext from '../../context/authentication/authContext';
+import alertContext from './../../context/alert/alertContext';
+import Alert from './../Alert';
 
 
 const Login = () => {
     const { login } = useContext(authContext)
-    const [ user, setUser ] = useState({ email : "", password : ""})
+    const { showAlert } = useContext(alertContext)
 
-    const handleSubmit = (e) =>{
+    const [user, setUser] = useState({ email: "", password: "" })
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        login(user)
+        login(user, showAlert)
     }
 
     const onChange = (e) => {
-        setUser({...user, [e.target.name]: e.target.value })
+        setUser({ ...user, [e.target.name]: e.target.value })
     }
 
     return (
         <div>
-            <Navbar display={"d-none"} />
-            <div className="container d-flex justify-content-between align-items-center " style = {{height: "calc(100vh - 60px)", width: "60%"}} >
-            <h1> CloudBook </h1>
-                <form onSubmit = {handleSubmit} >
+            <Navbar  display={"d-none"} />
+            <Alert alert = {alert}/>
+            <div className="container d-flex justify-content-around align-items-center " style={{ height: "calc(100vh - 60px)", width: "60%" }} >
+                <h1> CloudBook </h1>
+                <form onSubmit={handleSubmit} >
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label" style={{fontSize:"1.5rem"}} >
+                        <label htmlFor="email" className="form-label" style={{ fontSize: "1.5rem" }} >
                             Email address
                         </label>
                         <input
                             type="email"
                             className="form-control"
                             id="email"
-                            name = "email"
+                            name="email"
                             aria-describedby="emailHelp"
-                            value = {user.email}
-                            onChange = {onChange}
+                            value={user.email}
+                            onChange={onChange}
                         />
                         <div id="emailHelp" className="form-text">
                             We'll never share your email with anyone else.
                         </div>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="password" className="form-label" style={{fontSize:"1.5rem"}}>
+                        <label htmlFor="password" className="form-label" style={{ fontSize: "1.5rem" }}>
                             Password
                         </label>
                         <input
                             type="password"
                             className="form-control"
                             id="password"
-                            name = "password"
-                            value = {user.password}
-                            onChange = {onChange}
+                            name="password"
+                            value={user.password}
+                            onChange={onChange}
                         />
                     </div>
                     <button type="submit" className="btn btn-primary">

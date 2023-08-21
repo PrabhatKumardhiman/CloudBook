@@ -16,8 +16,8 @@ const Signup = () => {
     }
     return (
         <div>
-        <Navbar display={"d-none"} />
-        <div className="container d-flex justify-content-between align-items-center " style = {{height: "calc(100vh - 60px)", width: "60%"}} >
+        <Navbar displaysignup={"d-none"} />
+        <div className="container d-flex justify-content-around align-items-center " style = {{height: "calc(100vh - 60px)", width: "60%"}} >
         <h1> CloudBook </h1>
             <form onSubmit = {handleSubmit} >
                 <div className="mb-3">
@@ -33,6 +33,7 @@ const Signup = () => {
                         value = {user.name}
                         onChange = {onChange}
                         required
+                        minLength = {3}
                     />
                 </div>
                 <div className="mb-3">
@@ -65,6 +66,7 @@ const Signup = () => {
                         value = {user.password}
                         onChange = {onChange}
                         required
+                        minLength = {5}
                     />
                 </div>
                 <div className="mb-3">
@@ -82,7 +84,7 @@ const Signup = () => {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">
-                    Login
+                    Signup
                 </button>
             </form>
 

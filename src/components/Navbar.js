@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = (props) => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-primary " data-bs-theme="dark">
+            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary" data-bs-theme="dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">
                         Navbar
@@ -35,7 +35,7 @@ const Navbar = (props) => {
                         </ul>
                         <form className="d-flex">
                         <Link  className= {`btn btn-outline-light ${props.display} me-3`} to="/login" role="button">Login</Link>
-                        <Link className="btn btn-outline-light ${props.display}" to="/signup" role="button">Signup</Link>
+                        <Link className={`btn btn-outline-light ${props.displaysignup}`} to="/signup" role="button">Signup</Link>
                         </form>
                     </div>
                 </div>

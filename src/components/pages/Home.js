@@ -8,7 +8,7 @@ const Home = () => {
         <>
             <Navbar />
             <div className="container">
-                <Alert />
+                <Alert alert = {alert}/>
                 <AddNote />
                 <AllNotes />
             </div>

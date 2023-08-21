@@ -5,9 +5,8 @@ import { useNavigate } from "react-router-dom";
 const AuthState = (props) => {
 
   let navigate = useNavigate();
-
-  const login = async (user) => {
-    console.log(user)
+  const login = async (user, showAlert) => {
+    console.log(showAlert)
     try {
       const response = await fetch(`http://localhost:5000/api/auth/login`, {
         method: "POST",
@@ -21,12 +20,10 @@ const AuthState = (props) => {
       if (json.jwtToken) {
         localStorage.setItem("token", json.jwtToken)
         navigate("/");
-      }
-      else {
-        console.log("Invalid Credentials")
+        showAlert("Login Sucessful", "success")
       }
     } catch (error) {
-      alert("Invalid Credentials")
+      showAlert("Invalid Login Credentials", "danger")
     }
   }
 
