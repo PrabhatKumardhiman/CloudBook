@@ -2,13 +2,14 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
+  const host = 'https://cloudbook-backend-vqj0.onrender.com/'
 
   const [state, setState] = useState([])
 
   // Fetch all Notes 
   const getNotes = async () =>{
     try{
-    const response = await fetch(`http://localhost:5000/api/notes/fetchallnotes`, {
+    const response = await fetch(`${host}api/notes/fetchallnotes`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +26,7 @@ const NoteState = (props) => {
   // Add a note
   const addNote = async (newNote) => {
     try {
-    const response = await fetch(`http://localhost:5000/api/notes/addnote`, {
+    const response = await fetch(`${host}api/notes/addnote`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -44,7 +45,7 @@ const NoteState = (props) => {
   // Delete Note
   const deleteNote = async (id) => {
     try{
-    const response = await fetch(`http://localhost:5000/api/notes/deletenote/${id}`, {
+    const response = await fetch(`${host}api/notes/deletenote/${id}`, {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -64,7 +65,7 @@ const NoteState = (props) => {
   // Edit Note
   const updateNote = async (newNote) => {
     try {
-    const response = await fetch(`http://localhost:5000/api/notes/updatenote/${newNote._id}`, {
+    const response = await fetch(`${host}api/notes/updatenote/${newNote._id}`, {
       method: "PUT",
       mode: "cors",
       headers: {

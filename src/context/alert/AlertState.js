@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const AlertState = (props) => {
     const [ alert, setAlert ] = useState(null)
-    console.log(alert)
 
     const showAlert = (message, type)=>{
         setAlert({
