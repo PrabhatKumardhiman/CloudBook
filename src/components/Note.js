@@ -24,7 +24,6 @@ const Note = () => {
     }
 
     const handleChange = (e) => {
-        tag
         setNote({ ...note, [e.target.name]: e.target.value })
     }
 
@@ -151,8 +150,8 @@ const Note = () => {
                                 <p className="card-text">
                                     {e.description}
                                 </p>
-                                <UilTrash to="/" className="card-link" onClick={() => deleteNote(e._id)} />
-                                <UilEdit to="/" className="card-link" onClick={() => openModal(e)} />
+                                <UilTrash to="/" style = {{cursor : "pointer"}} className="card-link " onClick={() => deleteNote(e._id)} />
+                                <UilEdit to="/" style = {{cursor : "pointer"}} className="card-link " onClick={() => openModal(e)} />
                             </div>
                         </div>
                     })}

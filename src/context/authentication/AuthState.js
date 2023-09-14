@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const AuthState = (props) => {
+  const {showAlert} = props
   const host = 'https://cloudbook-backend-vqj0.onrender.com/'
   let navigate = useNavigate();
   const login = async (user, showAlert) => {

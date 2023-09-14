@@ -6,12 +6,16 @@ import Alert from '../Alert';
 const Home = () => {
     return (
         <>
-            <Navbar  />
-            <div className="container">
-                <Alert alert = {alert}/>
-                <AddNote />
-                <AllNotes />
-            </div>
+            <header>
+                <Navbar />
+            </header>
+            <section>
+                <div className="container">
+                    <Alert alert={alert} />
+                    <AddNote />
+                    <AllNotes />
+                </div>
+            </section>
         </>
     )
 }

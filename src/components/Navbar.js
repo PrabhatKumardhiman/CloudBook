@@ -11,7 +11,7 @@ const Navbar = (props) => {
     }
     return (
         <div>
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary" data-bs-theme="dark">
+            <nav className="navbar navbar-expand-md navbar-dark sticky-top bg-primary" data-bs-theme="dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">
                         CloudBook
