@@ -1,5 +1,4 @@
-import react, { useState, useContext } from 'react';
-import Navbar from '../Navbar';
+import { useState, useContext } from 'react';
 import authContext from '../../context/authentication/authContext';
 import alertContext from './../../context/alert/alertContext';
 import Alert from './../Alert';
@@ -22,7 +21,6 @@ const Login = () => {
 
     return (
         <div>
-            <Navbar display={"d-none"} />
             <Alert alert={alert} />
             <div className="container-md .flex-row justify-content-around align-items-center mt-3" >
                 <h1 className="container"> CloudBook </h1>

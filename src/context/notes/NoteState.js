@@ -53,7 +53,7 @@ const NoteState = (props) => {
         "authtoken": localStorage.getItem('token')
       },
     });
-    const json = await response.json()
+    await response.json()
   } catch(error){
     console.error(error.message)
   }
@@ -74,7 +74,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title : newNote.updatetitle, description: newNote.updatedescription, tag : newNote.updatetag}), 
     });
-    const json = await response.json(); 
+    await response.json(); 
   }catch(error){
     console.error(error.message)
   }

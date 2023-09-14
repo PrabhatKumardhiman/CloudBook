@@ -7,7 +7,7 @@ const AllNotes = () => {
     const navigateto = useNavigate()
     const { getNotes } = useContext(noteContext)
     useEffect(() => {
-        localStorage.getItem("token")? getNotes() : navigateto('/login')
+        localStorage.getItem("token")? getNotes() : navigateto('/login')// eslint-disable-next-line
     }, [])
     
 

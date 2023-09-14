@@ -1,5 +1,4 @@
-import react , {useState, useContext} from 'react';
-import Navbar from '../Navbar';
+import {useState, useContext} from 'react';
 import authContext from '../../context/authentication/authContext';
 
 const Signup = () => {
@@ -16,7 +15,6 @@ const Signup = () => {
     }
     return (
         <div>
-        <Navbar displaysignup={"d-none"} />
         <div className="container d-flex justify-content-around align-items-center mt-5"  >
         <div className = "leftContainer">
         <h1> CloudBook </h1>
