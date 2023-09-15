@@ -14,7 +14,13 @@ function App() {
     <NoteState>
       <header>
         <Navbar />
+        <div className=' alert'>
+        <div className="alert alert-danger" role="alert">
+          This App uses React-Router-Dom so please Click on Login from Navbar to continue
+        </div>
+      </div>
       </header>
+      
       <AuthState>
         <AlertState>
           <div className="App">

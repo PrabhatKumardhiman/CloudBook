@@ -26,7 +26,8 @@ code {
   left:auto;
   right: 10px;
   transform: scale(1);
-  transition: transform 1.5s ease-in
+  transition: transform 1.5s ease-in;
+  z-index: 9999;
 }
 
 
