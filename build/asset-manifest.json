@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CloudBook/static/css/main.16a7cb06.css",
+    "main.js": "/CloudBook/static/js/main.d633fa72.js",
+    "index.html": "/CloudBook/index.html",
+    "main.16a7cb06.css.map": "/CloudBook/static/css/main.16a7cb06.css.map",
+    "main.d633fa72.js.map": "/CloudBook/static/js/main.d633fa72.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16a7cb06.css",
+    "static/js/main.d633fa72.js"
+  ]
+}
